@@ -1,0 +1,382 @@
+@import 'normalize';
+@import 'base';
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+
+.content {
+    height: 100%;
+}
+
+.header__logo {
+    margin: 0;
+}
+
+.services__header {
+
+    font-weight: bold;
+    font-style: italic;
+}
+
+.services__list {
+    font-size: 1em;
+    margin: 0;
+    list-style-type: none;
+    text-align: left;
+}
+
+.services__item {
+    line-height: 1;
+}
+
+
+
+
+.social {
+
+}
+
+.social__header {
+
+}
+
+.social__list {
+    list-style-type: none;
+}
+
+.social__item {
+    display: inline-block;
+}
+
+
+.social__link {
+
+
+}
+
+.contact__header {
+    font-size: 1em;
+    font-weight: bold;
+    font-style: italic;
+    margin: 0;
+}
+
+.contact > a {
+    color: white;
+    text-decoration: none;
+    border-bottom: solid 0.1em rgba(255,255,255,0.1);
+    transition: all ease 0.2s;
+
+}
+
+.contact > a:hover {
+    color: white;
+    text-decoration: none;
+    border-bottom: solid 0.1em rgba(255,255,255,1);
+}
+
+/* ==========================================================================
+   Non Grid Based Layout
+   ========================================================================== */
+
+.content.no-grid {
+    position: relative;
+    margin: 0 auto;
+    display: inline-block;
+    .header {
+        position: relative;
+        width: 100%;
+        height: 10em;
+
+    }
+
+    .header__logo {
+        position: absolute;
+
+        height: 4em;
+        margin-top: 0;
+
+    }
+
+    #main-logo {
+        max-width: 4em;
+    }
+
+    .services {
+        position: absolute;
+        height: 3em;
+        margin-top: 5em;
+        margin-left: 8em;
+        width: 30em;
+    }
+
+    .services__header {
+        float: left;
+        margin-right: 1rem;
+    }
+
+
+    .services__header {
+        font-size: 3.5em;
+        margin: 0;
+        font-weight: bold;
+        font-style: italic;
+        line-height: 1;
+    }
+
+    .services__list {
+        font-size: 1em;
+        margin: 0;
+        list-style-type: none;
+        text-align: left;
+    }
+
+    .services__item {
+        line-height: 1;
+    }
+
+
+
+    .social__icon {
+        max-width: 4em;
+    }
+
+    .contact {
+        margin-left: 8em;
+        text-align: left;
+    }
+
+
+
+}
+
+/* ==========================================================================
+   Grid Based Layout
+   ========================================================================== */
+
+
+.content.has-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 12.5vh 6.25vh 1fr 25vh 25vh;
+    grid-template-areas:
+        ". ."
+        "logo ."
+        ". services"
+        ". ."
+        "social social"
+        ". contact"
+    ;
+
+
+    #main-logo {
+        max-height: 100%;
+    }
+
+    .header__logo {
+        max-width: 50vw;
+        grid-area: logo;
+        text-align: right;
+
+    }
+
+    .services {
+        grid-area: services;
+        text-align: left;
+
+        &__header {
+            font-size: 7.5vh;
+            margin: 0;
+            line-height: 1;
+            display: inline-block
+        }
+
+        &__list {
+            font-size: 2.3vh;
+            margin: 0;
+            list-style-type: none;
+            text-align: left;
+            display: inline-block;
+            padding: 0 0 0 1em;
+        }
+
+        &__item {
+            line-height: 1;
+        }
+    }
+
+    .social {
+        grid-area: social;
+
+        &__list {
+            margin: 0;
+            padding: 0;
+        }
+
+        &__item {
+            padding: 0.2em;
+
+        }
+
+        img {
+            max-height: 6.25vh;
+        }
+
+    }
+
+    .contact {
+        grid-area: contact;
+        text-align: left;
+    }
+
+}
+
+.content.no-prop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1em 4em auto 1fr 8em 8em;
+    grid-template-areas:
+        ". ."
+        "logo logo"
+        "services services"
+        ". ."
+        "social social"
+        "contact contact"
+;
+
+
+
+    #main-logo {
+        max-height: 100%;
+    }
+
+    .header__logo {
+        max-width: 50vw;
+        grid-area: logo;
+
+        align-self: stretch;
+        text-align: right;
+
+    }
+
+    .services {
+        grid-area: services;
+        text-align: left;
+
+        &__header {
+            font-size: 3.6em;
+            margin: 0;
+            line-height: 1;
+            display: inline-block
+        }
+
+        &__list {
+            font-size: 1em;
+            margin: 0;
+            list-style-type: none;
+            text-align: left;
+            display: inline-block;
+            padding: 0 0 0 1em;
+            font-weight: 100;
+        }
+
+        &__item {
+            line-height: 1;
+        }
+    }
+
+    .social {
+        grid-area: social;
+
+        &__list {
+            margin: 0;
+            padding: 0;
+        }
+
+        &__item {
+            padding: 0.2em;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        img {
+            max-height: 4em;
+        }
+
+    }
+
+    .contact {
+        grid-area: contact;
+        text-align: left;
+    }
+
+}
+
+@media screen and (min-width: 15em) {
+    .content.no-prop {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 4em auto 1fr 8em 8em;
+        grid-template-areas:
+            ". ."
+            "logo ."
+            ". services"
+            ". ."
+            "social social"
+            ". contact";
+    }
+}
+
+
+@media screen and (min-width: 45em) {
+    .content.no-prop {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+            "logo . ."
+            ". services services"
+            ". social contact";
+        .header__logo {
+            margin-left: auto;
+            width: auto;
+            height: 6rem;
+            align-self: end;
+
+        }
+        #main-logo {
+            max-width: 100%;
+        }
+
+        .social {
+            text-align: left;
+
+            img {
+                max-height: 4.5em;
+            }
+        }
+        .services {
+            &__header {
+                font-size: 5em;
+            }
+
+            &__list {
+                font-size: 1.4em;
+                padding: 0 0 0 1em;
+            }
+
+        }
+
+        .contact {
+            padding: 0.5em;
+        }
+    }
+}
+
